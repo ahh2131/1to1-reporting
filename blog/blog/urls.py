@@ -15,6 +15,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+<<<<<<< HEAD
+=======
+    url(r'^api-auth/', include('rest_framework.urls',
+                               namespace='rest_framework')),
+>>>>>>> master
     #static
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',
          {'document_root': settings.STATIC_ROOT}),
@@ -26,4 +31,9 @@ urlpatterns = patterns('',
     url(r'^$', 'blog.views.home', name="home"),
     #posts
     (r'^posts/', include('posts.urls')),
+<<<<<<< HEAD
+=======
+    #tags
+    (r'^tags/', include('tags.urls')),
+>>>>>>> master
 )

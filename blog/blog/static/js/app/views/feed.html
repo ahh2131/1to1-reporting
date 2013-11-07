@@ -3,13 +3,22 @@
     <div class="span9 main">
         <div class="row">
             <div class="span9">
+<<<<<<< HEAD
                 <a class="btn" ng-click="open('create')"> Create</a>
+=======
+                <a ng-show="globals.is_authenticated" class="btn" ng-click="open('create')"> Create</a>
+                <a ng-hide="globals.is_authenticated" class="btn" href="/api-auth/login/"> Create</a>
+>>>>>>> master
 
                 <div modal="postModalCreate" close="close('create')" options="opts">
                     <a ng-click="close('create')" class="close" data-dismiss="modal">×</a>
 
                     <div class="modal-header">
+<<<<<<< HEAD
                         <h4>Edit tip</h4>
+=======
+                        <h4>Edit Post</h4>
+>>>>>>> master
                     </div>
                     <div class="modal-body">
                         <form class="form-horizontal">
@@ -28,6 +37,30 @@
                                               ng-model="post.description"></textarea>
                                 </div>
                             </div>
+<<<<<<< HEAD
+=======
+                            <div class="control-group">
+                                <label class="control-label" for="tags">Tags</label>
+
+                                <div class="controls">
+                                    <div>
+                        <span class="tag btn btn-info btn-small"
+                              ng-repeat="tag in post.tags_details">
+                            {[{tag.name}]}
+                            <i class="icon-white icon-remove remove-tag"
+                               ng-click="removeTag(tag)"></i>
+                        </span>
+                                    </div>
+                                    <div id="list-members-add">
+                                        <input type="text" placeholder="Add tags"
+                                               class="ui-autocomplete-input"
+                                               ng-model="selectedTag" ng-change="selectTag()"
+                                               autocomplete="off"
+                                               typeahead="suggestion as suggestion.name for suggestion in getTag($viewValue)">
+                                    </div>
+                                </div>
+                            </div>
+>>>>>>> master
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -51,7 +84,21 @@
                                 {[{post.description|truncate:150}]}
                             </p>
                         </div>
+<<<<<<< HEAD
                         <small><abbr time-ago title="{[{post.created_on}]}" class="date"></abbr></small>
+=======
+                        <p>
+                            <ul class="inline">
+                                <li ng-repeat="tag in post.tags_details">
+                                    <span class="label"><i class="icon-white icon-tag"></i> {[{tag.name}]}</span>
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                        <small><abbr time-ago title="{[{post.created_on}]}" class="date"></abbr></small>
+                        <small><b>by</b> {[{post.author}]}</small>
+                        </p>
+>>>>>>> master
                     </div>
                 </div>
             </div>

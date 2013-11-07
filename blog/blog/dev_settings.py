@@ -11,8 +11,17 @@ DEV_MIDDLEWARE_CLASSES = (
 DEV_INSTALLED_APPS = (
     #posts
     'posts',
+<<<<<<< HEAD
     #rest_framework
     'rest_framework',
+=======
+    #tags
+    'tags',
+    #rest_framework
+    'rest_framework',
+    #south
+    'south',
+>>>>>>> master
 )
 
 #rest framework settings
@@ -26,5 +35,12 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         #'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+<<<<<<< HEAD
     ]
+=======
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    )
+>>>>>>> master
 }

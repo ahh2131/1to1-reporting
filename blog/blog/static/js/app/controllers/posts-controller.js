@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Blog.controller('PostController', function ($scope, $routeParams, $location, PostService, GlobalService, post) {
+=======
+Blog.controller('PostController', function ($scope, $routeParams, $location, PostService, TagService, GlobalService, post) {
+>>>>>>> master
     $scope.post = post;
     $scope.globals = GlobalService;
     var failureCb = function (status) {
@@ -11,16 +15,22 @@ Blog.controller('PostController', function ($scope, $routeParams, $location, Pos
     };
     //open modals
     $scope.open = function (action) {
+<<<<<<< HEAD
         $scope.postName = $scope.post.name;
         $scope.postDescription = $scope.post.description;
+=======
+>>>>>>> master
         if (action === 'edit'){
             $scope.postModalEdit = true;
         };
     };
     //close modals
     $scope.close = function (action) {
+<<<<<<< HEAD
         $scope.postName = "";
         $scope.postDescription = "";
+=======
+>>>>>>> master
         if (action === 'edit'){
             $scope.postModalEdit = false;
         };
@@ -32,4 +42,27 @@ Blog.controller('PostController', function ($scope, $routeParams, $location, Pos
             $scope.postModalEdit = false;
         }, failureCb);
     };
+<<<<<<< HEAD
+=======
+    $scope.getTag = function (text) {
+        return TagService.query(text).then(function (data) {
+            return data;
+        }, function (status) {
+            console.log(status);
+        });
+    };
+    $scope.selectTag = function () {
+        if (typeof $scope.selectedTag === 'object') {
+            $scope.post.tags.push($scope.selectedTag.url);
+            $scope.post.tags_details.push($scope.selectedTag);
+            $scope.selectedTag = null;
+        }
+    };
+    $scope.removeTag = function (category) {
+        var index = $scope.post.tags_details.indexOf(category);
+        $scope.post.tags_details.splice(index, 1);
+        var index = $scope.post.tags.indexOf(category.url);
+        $scope.post.tags.splice(index, 1);
+    };
+>>>>>>> master
 });

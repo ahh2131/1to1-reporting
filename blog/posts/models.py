@@ -6,11 +6,19 @@ class Post(models.Model):
     """
     An item created by a user.
     """
+<<<<<<< HEAD
+=======
+    author = models.ForeignKey('auth.User', related_name='posts')
+>>>>>>> master
     title = models.CharField(max_length=100)
     slug = models.SlugField()
     description = models.TextField(blank=True, help_text=(
         "If omitted, the description will be the post's title."))
     is_active = models.BooleanField(default=True, blank=True)
+<<<<<<< HEAD
+=======
+    tags = models.ManyToManyField('tags.Tag', related_name='posts')
+>>>>>>> master
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
