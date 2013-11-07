@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from reporting.models import Calls
 
-class CallSerializer(serializers.HyperlinkedModelSerializer):
+class CallSerializer(serializers.ModelSerializer):
 	api_url = serializers.SerializerMethodField('get_api_url')
 	class Meta:
 		model = Calls

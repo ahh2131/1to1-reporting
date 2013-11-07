@@ -1,7 +1,6 @@
-Reporting.controller('FeedController', function ($scope, GlobalService, PostService, ReportingService, posts, users) {
+Reporting.controller('FeedController', function ($scope, GlobalService, PostService, posts) {
     $scope.posts = posts;
     $scope.globals = GlobalService;
-    $scope.users = users;
     //options for modals
     $scope.opts = {
         backdropFade: true,

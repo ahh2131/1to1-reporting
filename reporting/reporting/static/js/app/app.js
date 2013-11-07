@@ -30,17 +30,11 @@ Reporting.config(function ($routeProvider) {
                 }
             }
         })
-        .when("/dashboard1", {
-            // template
-            templateUrl: "static/js/app/views/dashboard.html",
-            // contains functions which can be called from the template
-            controller: "FeedController",
-        })
         .when("/dashboard", {
-            templateUrl: "static/js/app/views/dashboard2.html",
+            templateUrl: "static/js/app/views/dashboard.html",
             controller: "ReportingController",
             resolve: {
-                users: function(ReportingService) {
+                calls: function(ReportingService) {
                     return ReportingService.list();
                 }
             }

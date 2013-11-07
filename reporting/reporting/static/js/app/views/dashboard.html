@@ -302,6 +302,11 @@
               <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
                   <div class="wrapper">
+
+                    <a ng-repeat="call in calls">
+                      {[{ call.mentor_id }]}
+                    </a>
+                    
                     <div id="hero-area" class="graph"></div>
                     <div class="row m-t-lg">
                       <div class="col-md-6">
