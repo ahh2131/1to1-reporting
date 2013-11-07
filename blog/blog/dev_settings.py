@@ -17,6 +17,7 @@ DEV_INSTALLED_APPS = (
 =======
     #tags
     'tags',
+    'reporting',
     #rest_framework
     'rest_framework',
     #south

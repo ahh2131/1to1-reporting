@@ -88,10 +88,10 @@ MIDDLEWARE_CLASSES = (
 ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; 
 LOGIN_REDIRECT_URL = '/'
 
-ROOT_URLCONF = 'blog.urls'
+ROOT_URLCONF = 'reporting.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'blog.wsgi.application'
+WSGI_APPLICATION = 'reporting.wsgi.application'
 
 INSTALLED_APPS = (
     'django.contrib.auth',
