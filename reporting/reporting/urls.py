@@ -27,6 +27,8 @@ urlpatterns = patterns('',
     url(r'^$', 'reporting.views.home', name="home"),
     url(r'^dashboard1/', 'reporting.views.home', name="dashboard1"),
     url(r'^dashboard/', views.ReportingList.as_view(), name="dashboard"),
+    url(r'^login/', views.LoginFormView.as_view() , name="login"),
+    url(r'^signin/', 'reporting.views.signin', name="signin"),
     url(r'^profile/', 'reporting.views.home', name="profile"),
 
     #posts

@@ -46,6 +46,7 @@ Reporting.config(function ($routeProvider) {
             controller: "FeedController",
 
         })
+
         .when("/post/:id", {
             templateUrl: "static/js/app/views/view.html",
             controller: "PostController",
