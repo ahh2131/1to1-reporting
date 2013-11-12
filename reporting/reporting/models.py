@@ -1,9 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 class Mentor(models.Model):
 	name = models.TextField(blank=True)
 
 class Enrolling_Party(models.Model):
+	user = models.ForeignKey(User)
 	name = models.TextField(blank=True)
 
 class Mentee(models.Model):
