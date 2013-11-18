@@ -289,7 +289,7 @@
               <a href="#" class="m-r"><i class="icon-calendar icon-2x icon-muted  v-middle"></i> My Calendar</a>
               <a href="#"><i class="icon-cog icon-2x icon-muted  v-middle"></i> Settings</a>
             </div>
-          </header> 
+          </header> gy
           <section  class="hbox">
             <aside class="bg-white-only">
               <header class="bg-light">
@@ -338,11 +338,11 @@
                 <div class="tab-pane" id="tab2">
                   <ul class="list-group m-b-none m list-group-lg list-group-sp">
 
-                    <li ng-repeat="call in calls" class="list-group-item">
-                      <a href="#{[{call.mentor_id}]}" class="thumb-sm pull-left m-r-sm">
+                    <li ng-href="#/profile/{[{ call.mentee_id }]}" ng-repeat="call in calls" class="list-group-item">
+                      <a href="#/profile/{[{call.mentor_id}]}" class="thumb-sm pull-left m-r-sm">
                         <img src="/static/images/avatar_default.jpg" class="img-circle">
                       </a>
-                      <a ng-href="#/mentee/{[{ call.mentee_id }]}" class="clear">
+                      <a  class="clear">
                         <small class="pull-right">{[{call.start_time + " " + call.date }]}</small>
                         <strong class="block">
                           <a ng-repeat="mentee in mentees">
