@@ -35,7 +35,10 @@ Reporting.config(function ($routeProvider) {
             controller: "ReportingController",
             resolve: {
                 calls: function(ReportingService) {
-                    return ReportingService.list();
+                    return ReportingService.listCalls();
+                },
+                mentees: function(ReportingService) {
+                    return ReportingService.listMentees();
                 }
             }
         })
