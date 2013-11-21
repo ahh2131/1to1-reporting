@@ -289,7 +289,7 @@
               <a href="#" class="m-r"><i class="icon-calendar icon-2x icon-muted  v-middle"></i> My Calendar</a>
               <a href="#"><i class="icon-cog icon-2x icon-muted  v-middle"></i> Settings</a>
             </div>
-          </header> gy
+          </header> 
           <section  class="hbox">
             <aside class="bg-white-only">
               <header class="bg-light">
@@ -302,13 +302,6 @@
               <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
                   <div class="wrapper">
- <a ng-repeat="mentee in mentees">
-  {[{ mentee }]}
-  <br>
-</a>
-
-
-                    
                     <div id="hero-area" class="graph"></div>
                     <div class="row m-t-lg">
                       <div class="col-md-6">
@@ -338,32 +331,26 @@
                 <div class="tab-pane" id="tab2">
                   <ul class="list-group m-b-none m list-group-lg list-group-sp">
 
-                    <li ng-href="#/profile/{[{ call.mentee_id }]}" ng-repeat="call in calls" class="list-group-item">
+                   <!--  <li ng-repeat="call in calls" class="list-group-item">
                       <a href="#/profile/{[{call.mentor_id}]}" class="thumb-sm pull-left m-r-sm">
                         <img src="/static/images/avatar_default.jpg" class="img-circle">
                       </a>
-                      <a  class="clear">
+                      <a ng-href="#/profile/{[{ call.mentee_id }]}" class="clear">
                         <small class="pull-right">{[{call.start_time + " " + call.date }]}</small>
                         <strong class="block">
-                          <a ng-repeat="mentee in mentees">
 
-                           <a ng-if="{[{mentee.id == call.mentee_id}]}">
-                            {[{ mentee.name }]}
-                           </a>
-                          </a>
-                      
                           {[{call.mentee_id}]}</strong>
                         <small>Mentor: {[{call.mentor_id}]} - Completed Goals: {[{call.num_completed_goals}]}</small>
                       </a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="#" class="thumb-sm pull-left m-r-sm">
+                    </li> -->
+                    <li ng-repeat="mentee in mentees" class="list-group-item">
+                      <a href="#/profile/{[{ mentee.id }]}" class="thumb-sm pull-left m-r-sm">
                         <img src="/static/images/avatar.jpg" class="img-circle">
                       </a>
-                      <a href="#" class="clear">
-                        <small class="pull-right">1 hour ago</small>
-                        <strong class="block">Jonathan George</strong>
-                        <small>Morbi nec nunc condimentum...</small>
+                      <a href="#/profile/{[{ mentee.id }]}" class="clear">
+                        <small class="pull-right"></small>
+                        <strong class="block">{[{ mentee.name }]}</strong>
+                        <small>Mentee Id: {[{ mentee.id }]}</small>
                       </a>
                     </li>
                     <li class="list-group-item">

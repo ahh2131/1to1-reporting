@@ -42,14 +42,23 @@ Reporting.config(function ($routeProvider) {
                 }
             }
         })
-        .when("/profile", {
+        .when("/profile/:id", {
             // template
             templateUrl: "static/js/app/views/profile.html",
-            // contains functions which can be called from the template
-            controller: "FeedController",
+            // containsprofile functions which can be called from the template
+            controller: "ProfileController",
+            resolve: {
+                mentee_calls: function ($route, ReportingService){
+                    var menteeId = $route.current.params.id
+                    return ReportingService.menteeCalls(menteeId);
+                },
+                mentee_info: function($route, ReportingService){
+                    var menteeId = $route.current.params.id
+                    return ReportingService.menteeInfo(menteeId);
+                }
+            }
 
         })
-
         .when("/post/:id", {
             templateUrl: "static/js/app/views/view.html",
             controller: "PostController",
@@ -60,6 +69,7 @@ Reporting.config(function ($routeProvider) {
                 }
             }
         })
+
         .otherwise({
             redirectTo: '/'
         })
