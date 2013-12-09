@@ -1,3 +1,8 @@
+/* controls the area */
+.area.fill.custom { 
+    fill: #9ecae1;
+    fill-opacity: 0.2;
+}
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;

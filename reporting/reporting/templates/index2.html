@@ -2,15 +2,26 @@
 	<head>	
 
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/libs/bootstrap.min.css">
+
 		<script src="{{ STATIC_URL }}js/libs/moment.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+
 		<script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery.1.9.1.min.js"><\/script>')</script>
 		<!-- <script src="{{ STATIC_URL }}js/libs/bootstrap.min.js"></script>	-->
+
+		<link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
 		<script src="{{ STATIC_URL }}js/libs/angular/angular.min.js"></script>
 		<script src="{{ STATIC_URL }}js/libs/angular/angular-resource.min.js"></script>
 	    <script src="{{ STATIC_URL }}js/libs/angular/angular-cookies.min.js"></script>
 	    <script src="{{ STATIC_URL }}js/libs/ui-bootstrap-tpls-0.3.0.min.js"></script>
 		<script src="{{ STATIC_URL }}js/app/app.js"></script>
+		<script src="{{ STATIC_URL }}js/dangle-master/dist/dangle.min.js"></script>
+
+
 
 		<meta charset="utf-8" />
 		<title>Web Application | todo</title>
@@ -22,6 +33,7 @@
 		<link rel="stylesheet" href="/static/css/font.css" type="text/css" cache="false" />
 		<link rel="stylesheet" href="/static/css/plugin.css" type="text/css" />
 		<link rel="stylesheet" href="/static/css/app2.css" type="text/css" />
+		<link rel="stylesheet" href="/static/js/dangle-master/css/dangle.css" type="text/css" />
 
 		<script src="{{ STATIC_URL }}js/app/controllers/app-controller.js"></script>
 		<script src="{{ STATIC_URL }}js/app/controllers/feed-controller.js"></script>
@@ -33,6 +45,8 @@
 		<script src="{{ STATIC_URL }}js/app/services/reporting-service.js"></script>
 		<script src="{{ STATIC_URL }}js/app/services/posts-service.js"></script>
 		<script src="{{ STATIC_URL }}js/app/directives/directives.js"></script>
+		<script src="{{ STATIC_URL }}js/app/directives/jq.js"></script>
+
 		<script src="{{ STATIC_URL }}js/app/filters/filters.js"></script>
 
 		<body data-spy="scroll" id="index" style="zoom: 1;" ng-controller="AppController" ng-init="initialize('{{ user.is_authenticated }}')">

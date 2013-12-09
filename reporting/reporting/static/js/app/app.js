@@ -1,7 +1,7 @@
 'use strict';
 // new start symbol and end symbol to differentiate from django's
 // dependency on bootstrap ui, an angular directive
-var Reporting = angular.module("Reporting", ["ui.bootstrap", "ngCookies"], function ($interpolateProvider) {
+var Reporting = angular.module("Reporting", ["ui.bootstrap", "ngCookies", "dangle"], function ($interpolateProvider) {
         $interpolateProvider.startSymbol("{[{");
         $interpolateProvider.endSymbol("}]}");
     }

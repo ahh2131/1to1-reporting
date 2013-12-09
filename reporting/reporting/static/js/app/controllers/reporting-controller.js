@@ -11,5 +11,14 @@ Reporting.controller('ReportingController', function ($scope, GlobalService, Rep
 	}
 	$scope.calls = calls;
 
+	$scope.graph = {
+	    entries: [
+	      {time: "20120320", count: 100},
+	      {time: "20120321", count: 20},
+	      {time: "20120322", count: 43},
+	      {time: "20120323", count: 83}
+	    ]
+	};
+
 
 });

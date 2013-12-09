@@ -290,19 +290,31 @@
               <a href="#"><i class="icon-cog icon-2x icon-muted  v-middle"></i> Settings</a>
             </div>
           </header> 
+          <div id="call-chart">test22</div>
+          <div pending-bar>test</div>
           <section  class="hbox">
             <aside class="bg-white-only">
               <header class="bg-light">
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#tab1" data-toggle="tab">Trade Market</a></li>
-                  <li class=""><a href="#tab2" data-toggle="tab">Events</a></li>
+                  <li class=""><a href="#tab2" data-toggle="tab">Mentees</a></li>
                   <li class=""><a href="#tab3" data-toggle="tab">Interaction</a></li>
                 </ul>
               </header>
+
+              <fs-area bind="graph" field="test" interpolate="true" height="700" label="Calls" on-click="filterByDate" />
+
+              
               <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
+
                   <div class="wrapper">
+                    {[{calls}]}
+
                     <div id="hero-area" class="graph"></div>
+                    <input type="text" ng-model="city" placeholder="Enter a city" />
+                    <div id="call-chart" morris-line></div>
+
                     <div class="row m-t-lg">
                       <div class="col-md-6">
                         <section class="panel">
@@ -343,6 +355,7 @@
                         <small>Mentor: {[{call.mentor_id}]} - Completed Goals: {[{call.num_completed_goals}]}</small>
                       </a>
                     </li> -->
+                    {[{ mentees }]}
                     <li ng-repeat="mentee in mentees" class="list-group-item">
                       <a href="#/profile/{[{ mentee.id }]}" class="thumb-sm pull-left m-r-sm">
                         <img src="/static/images/avatar.jpg" class="img-circle">
@@ -626,5 +639,28 @@
   <!-- Morris -->
   <script src="/static/js/charts/morris/raphael-min.js" cache="false"></script>
   <script src="/static/js/charts/morris/morris.min.js" cache="false"></script>
+  <!--<script>
+  console.log("test");
+  new Morris.Line({
+    // ID of the element in which to draw the chart.
+    element: 'call-chart',
+    // Chart data records -- each entry in this array corresponds to a point on
+    // the chart.
+    data: [
+      { year: '2008', value: 20 },
+      { year: '2009', value: 10 },
+      { year: '2010', value: 5 },
+      { year: '2011', value: 5 },
+      { year: '2012', value: 20 }
+    ],
+    // The name of the data record attribute that contains x-values.
+    xkey: '{year}',
+    // A list of names of data record attributes that contain y-values.
+    ykeys: ['value'],
+    // Labels for the ykeys -- will be displayed when you hover over the
+    // chart.
+    labels: ['Value']
+  });
+  </script> -->
 </body>
 </html>
