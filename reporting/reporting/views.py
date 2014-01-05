@@ -77,19 +77,29 @@ class JSONResponse(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
 
+# def call_list(request):
+#     """
+#     Lists users calls
+#     """
+#     enrolling_party = Enrolling_Party.objects.get(user=request.user.id)
+#     mentee = Mentee.objects.filter(enrolled_by_id=enrolling_party.id)
+#     mentee_list = list(mentee)
+#     result_query = set()
+#     for mentee in mentee_list:
+#         calls = Calls.objects.filter(mentee_id_id=mentee.id).order_by('-date')
+#         name = Mentee.objects.filter(id=mentee.id)
+#         result_query = chain(calls, result_query)
+#     serializer = CallSerializer(result_query, many=True)
+#     return JSONResponse(serializer.data)
+
 def call_list(request):
     """
-    Lists users calls
+    new and improved call list
+    list users calls
     """
     enrolling_party = Enrolling_Party.objects.get(user=request.user.id)
-    mentee = Mentee.objects.filter(enrolled_by_id=enrolling_party.id)
-    mentee_list = list(mentee)
-    result_query = set()
-    for mentee in mentee_list:
-        calls = Calls.objects.filter(mentee_id_id=mentee.id).order_by('-date')
-        name = Mentee.objects.filter(id=mentee.id)
-        result_query = chain(calls, result_query)
-    serializer = CallSerializer(result_query, many=True)
+    calls = Calls.objects.filter(mentee_id__enrolled_by__exact=enrolling_party).order_by('date')
+    serializer = CallSerializer(calls, many=True)
     return JSONResponse(serializer.data)
 
 def mentee_list(request):
@@ -104,7 +114,7 @@ def mentee_list(request):
 def mentee_calls(request, pk):
     enrolling_party = Enrolling_Party.objects.get(user=request.user.id)
     mentee = Mentee.objects.get(enrolled_by_id=enrolling_party.id, id=pk)
-    calls = Calls.objects.filter(mentee_id_id=mentee.id).order_by('-date')
+    calls = Calls.objects.filter(mentee_id_id=mentee.id).order_by('date')
 
     serializer = CallSerializer(calls, many=True)
     return JSONResponse(serializer.data)
