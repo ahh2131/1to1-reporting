@@ -98,7 +98,7 @@ def call_list(request):
     list users calls
     """
     enrolling_party = Enrolling_Party.objects.get(user=request.user.id)
-    calls = Calls.objects.filter(mentee_id__enrolled_by__exact=enrolling_party).order_by('date')
+    calls = Calls.objects.filter(mentee_id__enrolled_by__exact=enrolling_party).order_by('-date')
     serializer = CallSerializer(calls, many=True)
     return JSONResponse(serializer.data)
 
@@ -114,7 +114,7 @@ def mentee_list(request):
 def mentee_calls(request, pk):
     enrolling_party = Enrolling_Party.objects.get(user=request.user.id)
     mentee = Mentee.objects.get(enrolled_by_id=enrolling_party.id, id=pk)
-    calls = Calls.objects.filter(mentee_id_id=mentee.id).order_by('date')
+    calls = Calls.objects.filter(mentee_id_id=mentee.id).order_by('-date')
 
     serializer = CallSerializer(calls, many=True)
     return JSONResponse(serializer.data)

@@ -1,3 +1,8 @@
+.custom-graph {
+    position: relative;
+    width:100px;
+    height:400px;
+}
 /* controls the area */
 .area.fill.custom { 
     fill: #9ecae1;
@@ -614,6 +619,9 @@ a:hover .caret-white {
   }
   .aside-xl {
     width: 300px;
+  }
+  .aside-lg-percent {
+    width: 60%;
   }
   .scrollable {
     -webkit-overflow-scrolling: touch;

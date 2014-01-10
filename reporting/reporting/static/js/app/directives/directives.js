@@ -80,31 +80,6 @@ Reporting.directive('ngMorrison', function() {
     };
 });
 
-Reporting.directive('morrisLine', function(){
-  return {
-    restrict: 'EA',
-    template: '<div id="call-chart">tet2</div>',
-    scope: {
-        data: '=', //list of data object to use for graph
-        xkey: '=',
-        ykey: '='
-    },
-    link: function(scope,element,attrs){
-      new Morris.Line({
-          element: "call-chart",
-          data: [
-                { year: '2008', value: 20 },
-                { year: '2009', value: 10 },
-                { year: '2010', value: 5 },
-                { year: '2011', value: 5 },
-                { year: '2012', value: 20 }
-              ],
-          xkey: '{year}',
-          ykey: ['value'],
-      });
-   }
-  };
-});
 
 Reporting.directive('viewState', ['$rootScope',
     function ($rootScope) {

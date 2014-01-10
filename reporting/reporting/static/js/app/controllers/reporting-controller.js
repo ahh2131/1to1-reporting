@@ -11,7 +11,7 @@ Reporting.controller('ReportingController', function ($scope, GlobalService, Rep
 		}
 	}
 	$scope.calls = calls;
-	console.log(calls);
+
 
 	var j = 0;
 	year = null;
@@ -44,6 +44,5 @@ Reporting.controller('ReportingController', function ($scope, GlobalService, Rep
 	$scope.graph = {
 		entries: entries
 	};
-	console.log(entries);
 
 });

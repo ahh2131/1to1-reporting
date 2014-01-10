@@ -11,6 +11,7 @@
           <a class="btn btn-link visible-xs" data-toggle="collapse" data-target=".navbar-collapse">
             <i class="icon-comment-alt"></i>
           </a>
+
         </header>
         <section>
           <!-- nav -->
@@ -290,30 +291,29 @@
               <a href="#"><i class="icon-cog icon-2x icon-muted  v-middle"></i> Settings</a>
             </div>
           </header> 
-          {[{ calls[1]}]}
           <div pending-bar>test</div>
           <section  class="hbox">
             <aside class="bg-white-only">
               <header class="bg-light">
                 <ul class="nav nav-tabs">
-                  <li class="active"><a href="#tab1" data-toggle="tab">Trade Market</a></li>
-                  <li class=""><a href="#tab2" data-toggle="tab">Mentees</a></li>
-                  <li class=""><a href="#tab3" data-toggle="tab">Interaction</a></li>
+                  <li class="active"><a href="#tab1" ng-click="mentee=0" data-toggle="tab">Calls</a></li>
+                  <li class=""><a href="#tab2" ng-click="mentee=1" data-toggle="tab">Mentees</a></li>
+                  <li margin-top="9px" ng-show="mentee">Search: <input ng-model="searchText"></li>
                 </ul>
+
+
               </header>
 
-              <fs-area bind="graph" field="test" interpolate="true" height="700" label="Calls" on-click="filterByDate" />
 
               
               <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
+                  <fs-area bind="graph" class="custom-graph" interpolate="true" label="Calls" />
 
                   <div class="wrapper">
-                    {[{calls}]}
+              
 
-                    <div id="hero-area" class="graph"></div>
-                    <input type="text" ng-model="city" placeholder="Enter a city" />
-                    <div id="call-chart" morris-line></div>
+<!--                     <div id="hero-area" class="graph"></div>
 
                     <div class="row m-t-lg">
                       <div class="col-md-6">
@@ -337,7 +337,7 @@
                           </div>
                         </section>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <div class="tab-pane" id="tab2">
@@ -355,8 +355,8 @@
                         <small>Mentor: {[{call.mentor_id}]} - Completed Goals: {[{call.num_completed_goals}]}</small>
                       </a>
                     </li> -->
-                    {[{ mentees }]}
-                    <li ng-repeat="mentee in mentees" class="list-group-item">
+
+                    <li ng-repeat="mentee in mentees | filter:searchText" class="list-group-item">
                       <a href="#/profile/{[{ mentee.id }]}" class="thumb-sm pull-left m-r-sm">
                         <img src="/static/images/avatar.jpg" class="img-circle">
                       </a>
@@ -568,47 +568,55 @@
             <aside class="b-l aside-lg bg-light">
               <section class="wrapper">
                 <div class="text-center m-b">
-                  <div class="inline">
+                  Recent Calls
+<!--                   <div class="inline">
                     <div class="easypiechart" data-percent="65" data-line-width="25" data-track-color="#eee" data-bar-color="#afcf6f" data-scale-color="#ddd" data-loop="false" data-size="180">
                       <span class="h2">60</span>%
                       <div class="easypie-text">Processing</div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="panel-group m-b" id="accordion2">
                   <div class="panel">
                     <div class="panel-heading">
                       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                        Collapsible Group Item #1
+                        {[{ calls[0].mentee_id }]}
                       </a>
                     </div>
                     <div id="collapseOne" class="panel-collapse in">
                       <div class="panel-body text-sm">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt.
+                        {[{ calls[0].date | date:'short'}]} <br>
+                        Call #{[{ calls[0].call_number }]} - 
+                        Length: {[{ calls[0].length }]}
                       </div>
                     </div>
                   </div>
                   <div class="panel">
                     <div class="panel-heading">
                       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                        Collapsible Group Item #2
+                        {[{ calls[1].mentee_id }]} 
                       </a>
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
                       <div class="panel-body text-sm">
-                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        {[{ calls[1].date | date:'short' }]} <br>
+                        Call #{[{ calls[1].call_number }]} - 
+                        Length: {[{ calls[1].length }]}
                       </div>
                     </div>
                   </div>
                   <div class="panel">
                     <div class="panel-heading">
                       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                        Collapsible Group Item #3
+                        {[{ calls[2].mentee_id }]}
                       </a>
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
                       <div class="panel-body text-sm">
-                        Sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                        {[{ calls[2].date | date:'short' }]} <br>
+                        Call #{[{ calls[2].call_number }]} - 
+                        Length: {[{ calls[2].length }]}
+
                       </div>
                     </div>
                   </div>
