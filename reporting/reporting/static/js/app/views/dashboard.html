@@ -1,20 +1,112 @@
 
   <section class="hbox stretch">
-    <!-- .aside -->
-    <aside class="bg-success dker aside-sm nav-vertical" id="nav">
+    <aside class="bg-light aside b-r" id="nav">
       <section class="vbox">
-        <header class="bg-black nav-bar">
+        <header class="bg-dark nav-bar">
           <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
             <i class="icon-reorder"></i>
           </a>
-          <a href="#" class="nav-brand" data-toggle="fullscreen">todo</a>
+          <a href="#/dashboard" class="nav-brand" data-toggle="">InquisitHealth</a>
+          <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user">
+            <i class="icon-comment-alt"></i>
+          </a>
+        </header>
+        <section>
+          <div class="bg-dark lter nav-user hidden-xs pos-rlt">            
+            <div class="nav-avatar pos-rlt">1-to-1 Reporting
+    <!--           <a href="#" class="thumb-sm avatar animated rollIn" data-toggle="dropdown">
+                <img src="images/avatar.jpg" alt="" class="">
+                <span class="caret caret-white"></span>
+              </a> -->
+              <ul class="dropdown-menu m-t-sm animated fadeInLeft">
+                <span class="arrow top"></span>
+                <li>
+                  <a href="#">Settings</a>
+                </li>
+                <li>
+                  <a href="profile.html">Profile</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="badge bg-danger pull-right">3</span>
+                    Notifications
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="docs.html">Help</a>
+                </li>
+                <li>
+                  <a href="signin.html">Logout</a>
+                </li>
+              </ul>
+              <div class="visible-xs m-t m-b">
+                <a href="#" class="h3">John.Smith</a>
+                <p><i class="icon-map-marker"></i> London, UK</p>
+              </div>
+            </div>
+            <div class="nav-msg">
+             <!--  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <b class="badge badge-white count-n">2</b>
+              </a> -->
+              <section class="dropdown-menu m-l-sm pull-left animated fadeInRight">
+                <div class="arrow left"></div>
+                <section class="panel bg-white">
+                  <header class="panel-heading">
+                    <strong>You have <span class="count-n">2</span> notifications</strong>
+                  </header>
+                  <div class="list-group">
+                    <a href="#" class="media list-group-item">
+                      <span class="pull-left thumb-sm">
+                        <img src="images/avatar.jpg" alt="John said" class="img-circle">
+                      </span>
+                      <span class="media-body block m-b-none">
+                        Use awesome animate.css<br>
+                        <small class="text-muted">28 Aug 13</small>
+                      </span>
+                    </a>
+                    <a href="#" class="media list-group-item">
+                      <span class="media-body block m-b-none">
+                        1.0 initial released<br>
+                        <small class="text-muted">27 Aug 13</small>
+                      </span>
+                    </a>
+                  </div>
+                  <footer class="panel-footer text-sm">
+                    <a href="#" class="pull-right"><i class="icon-cog"></i></a>
+                    <a href="#">See all the notifications</a>
+                  </footer>
+                </section>
+              </section>
+            </div>
+          </div>
+          <nav class="nav-primary hidden-xs">
+            <ul class="nav">
+              <li>
+                <a href="#/dashboard">
+                  <i class="icon-tasks"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>              
+          </nav>
+        </section>
+      </section>
+    </aside>
+    <!-- .aside -->
+<!--     <aside class="bg-success dker aside-sm nav-vertical" id="nav">
+      <section class="vbox">
+    <header class="bg-black nav-bar">
+          <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
+            <i class="icon-reorder"></i>
+          </a>
+          <a href="#/dashboard" class="nav-brand" data-toggle="">todo</a>
           <a class="btn btn-link visible-xs" data-toggle="collapse" data-target=".navbar-collapse">
             <i class="icon-comment-alt"></i>
           </a>
 
-        </header>
+        </header> 
         <section>
-          <!-- nav -->
+           nav 
           <nav class="nav-primary hidden-xs">
             <ul class="nav">
               <li>
@@ -143,8 +235,8 @@
                 </a>
               </li>
             </ul>
-          </nav>
-          <!-- / nav -->
+          </nav> -->
+          <!-- / nav 
         </section>
         <footer class="footer bg-gradient hidden-xs">
           <a href="modal.lockme.html" data-toggle="ajaxModal" class="btn btn-sm btn-link m-r-n-xs pull-right">
@@ -155,12 +247,12 @@
           </a>
         </footer>
       </section>
-    </aside>
+    </aside> -->
     <!-- /.aside -->
     <!-- .vbox -->
     <section id="content">
       <section class="vbox">
-        <header class="header bg-black navbar navbar-inverse">
+        <!-- <header class="header bg-black navbar navbar-inverse">
           <div class="collapse navbar-collapse pull-in">
             <ul class="nav navbar-nav m-l-n">
               <li class="active"><a href="#">Dashboard</a></li>
@@ -251,7 +343,7 @@
               </li>
             </ul>
           </div>
-        </header>
+        </header> -->
         <section class="scrollable" id="pjax-container">
           <header>
             <div class="row b-b m-l-none m-r-none">
@@ -263,15 +355,15 @@
                 <div class="clearfix m-t-lg m-b-sm pull-right pull-none-xs">
                   <div class="pull-left">                  
                     <div class="pull-left m-r-xs">
-                      <span class="block">Users <span class="badge up bg-danger">+5</span></span>                    
-                      <span class="h4">432k</span>
+                      <span class="block">Mentees <!-- <span class="badge up bg-danger">+5</span> --></span>                    
+                      <span class="h4">{[{ mentees.length }]}</span>
                       <i class="icon-level-up text-success"></i>
                     </div>
-                    <div class="clear">
-                      <div class="sparkline inline" data-type="bar" data-height="35" data-bar-width="4" data-bar-spacing="2" data-stacked-bar-color="['#afcf6f', '#eee']">5:5,8:4,12:5,10:6,11:7,12:2,8:6</div>
-                    </div>
+                   <!--  <div class="clear">
+                      <div class="sparkline inline" data-type="bar" data-height="35" data-bar-width="4" data-bar-spacing="2" data-stacked-bar-color="['#afcf6f', '#eee']">5,8,12,10,11,12,8</div>
+                    </div> -->
                   </div>
-                  <div class="pull-left m-l-lg">
+                <!--   <div class="pull-left m-l-lg">
                     <div class="pull-left m-r-xs">
                       <span class="block">Profit</span>                    
                       <span class="h4">$4k</span>
@@ -280,25 +372,25 @@
                     <div class="clear">
                       <div class="sparkline inline" data-type="bar" data-height="35" data-bar-width="4" data-bar-spacing="2" data-bar-color="#fb6b5b">6,5,8,9,6,3,5</div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
-            <div class="wrapper bg-light font-bold">
+          <!--   <div class="wrapper bg-light font-bold">
               <a href="#" class="m-r"><i class="icon-bar-chart icon-2x icon-muted  v-middle"></i> Analysis</a>
               <a href="#" class="m-r"><span class="badge up m-r-n bg-danger">4</span><i class="icon-envelope icon-2x icon-muted  v-middle"></i> Message</a>
               <a href="#" class="m-r"><i class="icon-calendar icon-2x icon-muted  v-middle"></i> My Calendar</a>
               <a href="#"><i class="icon-cog icon-2x icon-muted  v-middle"></i> Settings</a>
-            </div>
+            </div> -->
           </header> 
           <div pending-bar>test</div>
           <section  class="hbox">
             <aside class="bg-white-only">
               <header class="bg-light">
-                <ul class="nav nav-tabs">
-                  <li class="active"><a href="#tab1" ng-click="mentee=0" data-toggle="tab">Calls</a></li>
-                  <li class=""><a href="#tab2" ng-click="mentee=1" data-toggle="tab">Mentees</a></li>
-                  <li margin-top="9px" ng-show="mentee">Search: <input ng-model="searchText"></li>
+                <ul class="nav nav-tabs" ng-init="mentee=1">
+                  <li class="active"><a href="#tab2" ng-click="mentee=1" data-toggle="tab">Mentees</a></li>
+                  <li class=""><a href="#tab1" ng-click="mentee=0" data-toggle="tab">Calls</a></li>
+                  <li style="margin-top:9px" ng-show="mentee">   Search for Mentee: <input style="margin-top:-2px" ng-model="searchText"></li>
                 </ul>
 
 
@@ -307,7 +399,7 @@
 
               
               <div class="tab-content">
-                <div class="tab-pane active" id="tab1">
+                <div class="tab-pane" id="tab1">
                   <fs-area bind="graph" class="custom-graph" interpolate="true" label="Calls" />
 
                   <div class="wrapper">
@@ -340,26 +432,10 @@
                     </div> -->
                   </div>
                 </div>
-                <div class="tab-pane" id="tab2">
+                <div class="tab-pane active" id="tab2">
                   <ul class="list-group m-b-none m list-group-lg list-group-sp">
-
-                   <!--  <li ng-repeat="call in calls" class="list-group-item">
-                      <a href="#/profile/{[{call.mentor_id}]}" class="thumb-sm pull-left m-r-sm">
-                        <img src="/static/images/avatar_default.jpg" class="img-circle">
-                      </a>
-                      <a ng-href="#/profile/{[{ call.mentee_id }]}" class="clear">
-                        <small class="pull-right">{[{call.start_time + " " + call.date }]}</small>
-                        <strong class="block">
-
-                          {[{call.mentee_id}]}</strong>
-                        <small>Mentor: {[{call.mentor_id}]} - Completed Goals: {[{call.num_completed_goals}]}</small>
-                      </a>
-                    </li> -->
-
-                    <li ng-repeat="mentee in mentees | filter:searchText" class="list-group-item">
-                      <a href="#/profile/{[{ mentee.id }]}" class="thumb-sm pull-left m-r-sm">
-                        <img src="/static/images/avatar.jpg" class="img-circle">
-                      </a>
+                    <li ng-href="#/profile/{[{ mentee.id }]}" ng-repeat="mentee in mentees | filter:searchText" class="list-group-item">
+                      
                       <a href="#/profile/{[{ mentee.id }]}" class="clear">
                         <small class="pull-right"></small>
                         <strong class="block">{[{ mentee.name }]}</strong>

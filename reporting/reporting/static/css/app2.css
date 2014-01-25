@@ -1,7 +1,10 @@
+.highlight-call {
+  background-color: lightgrey;
+}
 .custom-graph {
     position: relative;
-    width:100px;
-    height:400px;
+    width:80%;
+    height:80%;
 }
 /* controls the area */
 .area.fill.custom { 
