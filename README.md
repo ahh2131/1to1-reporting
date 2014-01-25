@@ -9,4 +9,8 @@ cd into reporting folder
 
 sudo python manage.py runserver 
 
-access on localhost
+access on localhost, homepage(login) is at http://127.0.0.1:8000/login
+
+graphs use dangle js (http://www.fullscale.co/dangle/)
+
+

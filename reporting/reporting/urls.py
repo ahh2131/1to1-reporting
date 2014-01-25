@@ -34,6 +34,4 @@ urlpatterns = patterns('',
     url(r'^signin/', 'reporting.views.signin', name="signin"),
     url(r'^profile/', 'reporting.views.home', name="profile"),
 
-    #posts
-    (r'^posts/', include('posts.urls')),
 )
